@@ -1,7 +1,7 @@
 import graphene
 import graphql_jwt
-from graphene_django import DjangoObjectType
 from .models import Ingredient, Recipe
+from graphene_django import DjangoObjectType
 from graphql_jwt.decorators import login_required
 from .serializers import IngredientSerializer, RecipeSerializer
 
@@ -101,7 +101,7 @@ class CreateRecipe(graphene.Mutation):
 
     class Arguments:
         title = graphene.String(required=True)
-        ingredients = graphene.List(graphene.NonNull(IngredientInput), required=True)  # here
+        ingredients = graphene.List(graphene.NonNull(IngredientInput), required=True) 
 
     @login_required
     def mutate(self, info, title, ingredients):
@@ -122,7 +122,7 @@ class AddIngredientsToRecipe(graphene.Mutation):
         ingredient_ids = graphene.List(graphene.ID, required=True)
 
     @login_required
-    def mutate(self, info, recipe_id, ingredient_ids):
+    def mutate(self, recipe_id, ingredient_ids):
         recipe = Recipe.objects.get(pk=recipe_id)
         ingredients = Ingredient.objects.filter(id__in=ingredient_ids)
         recipe.ingredients.add(*ingredients)
@@ -137,7 +137,7 @@ class RemoveIngredientsFromRecipe(graphene.Mutation):
         ingredient_ids = graphene.List(graphene.ID, required=True)
 
     @login_required
-    def mutate(self, info, recipe_id, ingredient_ids):
+    def mutate(self, recipe_id, ingredient_ids):
         recipe = Recipe.objects.get(pk=recipe_id)
         ingredients = Ingredient.objects.filter(id__in=ingredient_ids)
         recipe.ingredients.remove(*ingredients)
