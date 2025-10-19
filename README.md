@@ -60,85 +60,85 @@ Feel free to contact me at arun.thomas@twistedmountainanimation.com for any quer
 
 
 
-// this are the useful mutation
+this are the useful mutation
 
-// mutation {
-//   tokenAuth(username: "admin", password: "Admin@123") {
-//     token
-//   }
-// }
+ mutation {
+   tokenAuth(username: "admin", password: "Admin@123") {
+     token
+   }
+ }
 
-// query{
-//   allIngredients(limit:5){
-//     id
-//     name
-//   }
-// }
+ query{
+   allIngredients(limit:5){
+     id
+     name
+   }
+ }
 
-// query {
-//   allRecipes {
-//     id
-//     title
-//   }
-// }
+ query {
+   allRecipes {
+     id
+     title
+   }
+ }
 
-// mutation {
-//   createIngredient(name: "test") {
-//     ingredient {
-//       id
-//       name
-//     }
-//   }
-// }
+ mutation {
+   createIngredient(name: "test") {
+     ingredient {
+       id
+       name
+     }
+   }
+ }
 
 
-// mutation {
-//   createRecipe(
-//     title: "Tea",
-//     ingredients: [
-//       {name: "Salt"},
-//       {name: "Sugar"}
-//     ]
-//   ) {
-//     recipe {
-//       id
-//       title
-//       ingredientCount
-//     }
-//   }
-// }
+ mutation {
+   createRecipe(
+     title: "Tea",
+     ingredients: [
+       {name: "Salt"},
+       {name: "Sugar"}
+     ]
+   ) {
+     recipe {
+       id
+       title
+       ingredientCount
+     }
+   }
+ }
 
-// mutation {
-//   addIngredientsToRecipe(recipeId: 1, ingredientIds: [2, 3]) {
-//     recipe {
-//       id
-//       title
-//       ingredientCount
-//     }
-//   }
-// }
+ mutation {
+   addIngredientsToRecipe(recipeId: 1, ingredientIds: [2, 3]) {
+     recipe {
+       id
+       title
+       ingredientCount
+     }
+   }
+ }
 
-// mutation {
-//   removeIngredientsFromRecipe(recipeId: 1, ingredientIds: [3]) {
-//     recipe {
-//       id
-//       title
-//       ingredientCount
-//     }
-//   }
-// }
+ mutation {
+   removeIngredientsFromRecipe(recipeId: 1, ingredientIds: [3]) {
+     recipe {
+       id
+       title
+       ingredientCount
+     }
+   }
+ }
 
-// mutation {
-//   updateIngredient(id: 10, name: "updated test") {
-//     ingredient {
-//       id
-//       name
-//     }
-//   }
-// }
+ mutation {
+   updateIngredient(id: 10, name: "updated test") {
+     ingredient {
+       id
+       name
+     }
+   }
+ }
 
-// mutation {
-//   deleteIngredient(id: 2) {
-//     ok
-//   }
-// }
+mutation {
+   deleteIngredient(id: 2) {
+     ok
+  }
+}
